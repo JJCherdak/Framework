@@ -6,4 +6,5 @@ interface GitHubUserRepository {
 
     fun getUserByLogin(userId: String): GitHubUser?
 
+
 }

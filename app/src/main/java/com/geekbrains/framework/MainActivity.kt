@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.geekbrains.framework.App.Navigation.navigatorHolder
 import com.geekbrains.framework.App.Navigation.router
+import com.geekbrains.framework.hw2.AutorizationScreen
 import com.geekbrains.framework.mvpusers.UsersScreen
 import com.geekbrains.framework.navigation.CustomNavigator
 
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
-            router.navigateTo(UsersScreen)
+            router.navigateTo(AutorizationScreen)
         }
     }
 

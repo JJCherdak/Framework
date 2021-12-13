@@ -15,4 +15,6 @@ class GitHubUserRepositoryImpl : GitHubUserRepository {
 
     override fun getUserByLogin(userId: String): GitHubUser? =
         users.firstOrNull { user -> user.login == userId }
+
+
 }
