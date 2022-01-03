@@ -1,7 +1,7 @@
 package com.geekbrains.framework
 
 
-import android.R
+import com.geekbrains.framework.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.geekbrains.framework.App.Navigation.navigatorHolder
@@ -9,8 +9,10 @@ import com.geekbrains.framework.App.Navigation.router
 import com.geekbrains.framework.hw2.AutorizationScreen
 import com.geekbrains.framework.mvpusers.UsersScreen
 import com.geekbrains.framework.navigation.CustomNavigator
+import com.geekbrains.framework.square.SquareScreen
+import moxy.MvpAppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : MvpAppCompatActivity(R.layout.activity_main), MainView {
     private val navigator = CustomNavigator(activity = this, R.id.content)
 
     override fun onResumeFragments() {
@@ -21,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
-            router.navigateTo(AutorizationScreen)
+            router.navigateTo(SquareScreen)
         }
     }
 
@@ -29,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         navigatorHolder.removeNavigator()
         super.onPause()
     }
+
 }
+
+
 
 // Выбрал вариант задание про Switchmap.
 // и так? как я понял, switchmap в отличие от flatmap подписывается на последний Observable
