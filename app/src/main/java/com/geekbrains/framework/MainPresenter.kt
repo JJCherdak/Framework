@@ -1,5 +1,8 @@
 package com.geekbrains.framework
 
+import com.geekbrains.framework.CountersModel
+import com.geekbrains.framework.MainView
+
 class MainPresenter(
     private val view: MainView,
     private val model: CountersModel = CountersModel()

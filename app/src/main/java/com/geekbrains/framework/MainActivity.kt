@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.geekbrains.framework.MainPresenter
 import com.geekbrains.framework.R.layout.activity_main
 
 class MainActivity : AppCompatActivity(activity_main), MainView {
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity(activity_main), MainView {
     //Подсказка к ПЗ: поделить на 3 отдельные функции и избавиться от index
     override fun setButtonText(type: ButtonType, text: String) {
         when(type){
-            ButtonType.FIRST-> btn_counter1.text = text
+            ButtonType.FIRST -> btn_counter1.text = text
             ButtonType.SECOND -> btn_counter2.text = text
             ButtonType.THIRD -> btn_counter3.text = text
         }
