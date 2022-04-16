@@ -1,36 +1,35 @@
 package com.geekbrains.framework
 
-
+import com.geekbrains.framework.presenter.MainPresenter
+import com.geekbrains.framework.view.MainView
+import com.nhaarman.mockito_kotlin.times
+import com.nhaarman.mockito_kotlin.verify
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito.mock
+import org.mockito.Mock
+import org.mockito.MockitoAnnotations
 
 
-class MainPresenterTest {
+class  MainPresenterTest {
 
-    private val btn_counter1 = 0
-    private val btn_counter2 = 1
-    private val btn_counter3 = 2
+    private lateinit var presenter: MainPresenter
+    private val btnClickOne = 0
 
-    private val presenter : MainPresenter = mock(MainPresenter::class.java)
+    @Mock
+    private lateinit var mainView: MainView
 
-    @Test
-    fun btn_counter1Test(){
-        presenter.counterClick(ButtonType.FIRST)
-        Assert.assertEquals(0, ButtonType.FIRST)
+    @Before
+    fun setUp() {
+        MockitoAnnotations.initMocks(this)
+        presenter = MainPresenter(mainView)
     }
 
-    @Test
-    fun btn_counter2Test(){
-        presenter.counterClick(ButtonType.SECOND)
-        Assert.assertEquals(1, ButtonType.SECOND)
-    }
 
     @Test
-    fun btn_counter3Test(){
-        presenter.counterClick(ButtonType.THIRD)
-        Assert.assertEquals(2, ButtonType.THIRD)
+    fun button_counter1Test() {
+        presenter.counterClick(btnClickOne)
+        Assert.assertEquals(0, btnClickOne)
     }
 
 }
